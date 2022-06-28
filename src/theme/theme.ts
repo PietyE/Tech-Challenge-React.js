@@ -10,5 +10,14 @@ export const theme = responsiveFontSizes(
         contrastText: variables.textColor,
       },
     },
+    components: {
+      MuiButton: {
+        styleOverrides: {
+          root: {
+            borderRadius: '1.25rem',
+          },
+        },
+      },
+    },
   }),
 );
