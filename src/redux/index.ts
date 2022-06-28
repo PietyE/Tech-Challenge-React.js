@@ -1,5 +1,10 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import { sliderReducer } from '../components/Slider/reducers/sliderReducer';
+
+const reducer = combineReducers({
+  slider: sliderReducer,
+});
 
 export const store = configureStore({
-  reducer: {},
+  reducer,
 });
