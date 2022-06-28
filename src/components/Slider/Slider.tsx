@@ -1,11 +1,11 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Navigation } from 'swiper';
 import { Container } from '@mui/material';
 import { SliderArrow } from './components/SliderArrow';
 import { ArrowDirections } from './constants/constants';
-import { Autoplay, Navigation } from 'swiper';
-import './Slider.scss';
 import 'swiper/css';
+import './Slider.scss';
 
 export const Slider: React.FC = () => {
   return (

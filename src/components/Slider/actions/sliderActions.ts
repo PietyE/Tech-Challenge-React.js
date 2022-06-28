@@ -1,6 +1,6 @@
-import {
+import { SliderActions } from '../types/types';
+import type {
   Cat,
-  SliderActions,
   SliderGetSlidesError,
   SliderGetSlidesSuccess,
   SliderRequestSlides,

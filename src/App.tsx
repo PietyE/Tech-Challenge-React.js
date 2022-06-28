@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container } from '@mui/material';
-import './App.scss';
 import { Slider } from './components/Slider';
+import './App.scss';
 
 const App = () => (
   <div className="wrapper">
