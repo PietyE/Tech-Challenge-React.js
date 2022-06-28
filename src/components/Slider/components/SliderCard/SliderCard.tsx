@@ -10,12 +10,16 @@ interface SliderCardProps {
 }
 
 export const SliderCard: React.FC<SliderCardProps> = ({ catInfo }) => {
-  const { name, temperament, life_span, alt_names, wikipedia_url, origin } =
-    catInfo;
+  const { name, temperament, life_span, wikipedia_url, origin } = catInfo;
   return (
     <Card>
       <CardImage alt={name} />
-      <Content name={name} />
+      <Content
+        name={name}
+        temperament={temperament}
+        lifeSpan={life_span}
+        origin={origin}
+      />
       <CardFooter href={wikipedia_url} />
     </Card>
   );
