@@ -1,0 +1,13 @@
+$primary_color: #8C6CED;
+$primary_light: #b19df3;
+$text_color: #373D59;
+$white_color: #FFFFFF;
+$bold: 700;
+
+:export {
+  primaryColor: $primary_color;
+  primaryLight: $primary_light;
+  textColor: $text_color;
+  whiteColor: $white_color;
+  bold: $bold;
+}
