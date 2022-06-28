@@ -7,6 +7,7 @@ import { SliderArrow } from './components/SliderArrow';
 import { ArrowDirections } from './constants/constants';
 import { getSlides } from './services/getSlides';
 import { SliderCard } from './components/SliderCard';
+import { Loader } from '../../shared/components/Loader';
 import type { Dispatch } from 'redux';
 import type { StoreState } from '../../redux';
 import type { SliderAllActions, SliderState } from './types/types';
@@ -38,7 +39,7 @@ export const Slider: React.FC = () => {
     );
 
   return isLoading ? (
-    <p>Loading...</p>
+    <Loader />
   ) : (
     <Container maxWidth="lg" className="slider">
       <SliderArrow direction={ArrowDirections.LEFT} />

@@ -1,8 +1,9 @@
 import React from 'react';
-import { CardMedia } from '@mui/material';
 import { useSelector } from 'react-redux';
-import { StoreState } from '../../../../../../redux';
-import { SliderCardState } from '../../types/types';
+import { CardMedia } from '@mui/material';
+import { Loader } from '../../../../../../shared/components/Loader';
+import type { StoreState } from '../../../../../../redux';
+import type { SliderCardState } from '../../types/types';
 
 interface CardImageProps {
   alt: string;
@@ -15,13 +16,11 @@ export const CardImage: React.FC<CardImageProps> = ({ alt, id }) => {
     SliderCardState
   >(state => state.sliderCard);
 
-  const image: string = isLoading
-    ? process.env.PUBLIC_URL + '/loader.png'
-    : id === active_slide_breed
-    ? newPicture
-    : '';
+  const image: string = id === active_slide_breed ? newPicture : '';
 
-  return (
+  return isLoading ? (
+    <Loader isLarge={false} />
+  ) : (
     <CardMedia
       component="img"
       height="350"

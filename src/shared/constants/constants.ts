@@ -3,3 +3,8 @@ export const enum Endpoints {
   BREEDS = 'breeds',
   IMAGE = 'images/search?breed_id=',
 }
+
+export const enum LoaderSize {
+  LOADER_SIZE_LARGE = 500,
+  LOADER_SIZE_MEDIUM = 50,
+}
