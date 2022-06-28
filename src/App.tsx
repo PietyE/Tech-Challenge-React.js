@@ -6,7 +6,7 @@ import { Slider } from './components/Slider';
 const App = () => (
   <div className="wrapper">
     <main className="main">
-      <Container maxWidth="xl">
+      <Container maxWidth="xl" sx={{ pt: 40 }}>
         <Slider />
       </Container>
     </main>

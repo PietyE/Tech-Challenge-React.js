@@ -4,6 +4,7 @@ import {
   ArrowDirections,
   SliderArrowDirection,
 } from '../../constants/constants';
+import './SliderArrow.scss';
 
 interface SliderArrowProps {
   direction: SliderArrowDirection;
@@ -11,7 +12,15 @@ interface SliderArrowProps {
 
 export const SliderArrow: React.FC<SliderArrowProps> = ({ direction }) =>
   direction === ArrowDirections.RIGHT ? (
-    <ArrowCircleRight />
+    <ArrowCircleRight
+      color="primary"
+      className={`slider-arrow-${direction}`}
+      fontSize="large"
+    />
   ) : (
-    <ArrowCircleLeft />
+    <ArrowCircleLeft
+      color="primary"
+      className={`slider-arrow-${direction}`}
+      fontSize="large"
+    />
   );
