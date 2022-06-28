@@ -52,6 +52,27 @@ export const sliderCardGetActiveSlideBreed = (
   payload: id,
 });
 
+export const sliderCardGetNewPictureRequest = (
+  id: string,
+): SliderCardGetNewPictureRequest => ({
+  type: SliderCardActions.GET_NEW_PICTURE_REQUEST,
+  payload: id,
+});
+
+export const sliderCardGetNewPictureSuccess = (
+  id: string,
+): SliderCardGetNewPictureSuccess => ({
+  type: SliderCardActions.GET_NEW_PICTURE_SUCCESS,
+  payload: id,
+});
+
+export const sliderCardGetNewPictureError = (
+  id: string,
+): SliderCardGetNewPictureError => ({
+  type: SliderCardActions.GET_NEW_PICTURE_ERROR,
+  payload: id,
+});
+
 export const sliderCardReducer = (
   state: SliderCardState = sliderCardState,
   action: SliderCardAllActions,

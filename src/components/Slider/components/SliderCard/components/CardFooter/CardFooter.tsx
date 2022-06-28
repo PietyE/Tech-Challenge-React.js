@@ -3,8 +3,9 @@ import variables from '../../../../../../shared/assets/_variables.scss';
 import React from 'react';
 import { Dispatch } from 'redux';
 import {
+  SliderCardAllActions,
   sliderCardGetActiveSlideBreed,
-  SliderCardGetActiveSlideBreed,
+  sliderCardGetNewPictureRequest,
 } from '../../reducers/sliderCardReducer';
 import { useDispatch } from 'react-redux';
 
@@ -14,10 +15,12 @@ interface CardFooterProps {
 }
 
 export const CardFooter: React.FC<CardFooterProps> = ({ href, id }) => {
-  const dispatch = useDispatch<Dispatch<SliderCardGetActiveSlideBreed>>();
+  const dispatch = useDispatch<Dispatch<SliderCardAllActions>>();
 
-  const onGetRandomPicture = (id: string): SliderCardGetActiveSlideBreed =>
+  const onGetRandomPicture = (id: string): void => {
     dispatch(sliderCardGetActiveSlideBreed(id));
+    dispatch(sliderCardGetNewPictureRequest(id));
+  };
 
   return (
     <CardActions>
