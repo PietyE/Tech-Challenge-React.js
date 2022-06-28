@@ -1,13 +1,13 @@
-import { Button, CardActions, Link } from '@mui/material';
-import variables from '../../../../../../shared/assets/_variables.scss';
 import React from 'react';
-import { Dispatch } from 'redux';
+import { Button, CardActions, Link } from '@mui/material';
+import { useDispatch } from 'react-redux';
 import {
-  SliderCardAllActions,
   sliderCardGetActiveSlideBreed,
   sliderCardGetNewPictureRequest,
-} from '../../reducers/sliderCardReducer';
-import { useDispatch } from 'react-redux';
+} from '../../actions/sliderCardActions';
+import variables from '../../../../../../shared/assets/_variables.scss';
+import type { Dispatch } from 'redux';
+import type { SliderCardAllActions } from '../../types/types';
 
 interface CardFooterProps {
   href: string;

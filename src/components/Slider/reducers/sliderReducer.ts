@@ -1,5 +1,5 @@
-import type { SliderAllActions, SliderState } from '../types/types';
 import { SliderActions } from '../types/types';
+import type { SliderAllActions, SliderState } from '../types/types';
 
 export const sliderState: SliderState = {
   slides: [],

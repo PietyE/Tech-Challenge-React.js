@@ -1,12 +1,25 @@
 import { call, put } from 'redux-saga/effects';
+import { getImageURL } from '../services/getImageURL';
 import {
   sliderCardGetNewPictureError,
-  SliderCardGetNewPictureRequest,
   sliderCardGetNewPictureSuccess,
-} from '../reducers/sliderCardReducer';
-import { getImageURL } from '../services/getImageURL';
+} from '../actions/sliderCardActions';
+import type { CallEffect, PutEffect } from 'redux-saga/effects';
+import type {
+  SliderCardGetNewPictureError,
+  SliderCardGetNewPictureRequest,
+  SliderCardGetNewPictureSuccess,
+} from '../types/types';
 
-export function* getNewImage(action: SliderCardGetNewPictureRequest) {
+export function* getNewImage(
+  action: SliderCardGetNewPictureRequest,
+): Generator<
+  | CallEffect<string>
+  | PutEffect<SliderCardGetNewPictureSuccess>
+  | PutEffect<SliderCardGetNewPictureError>,
+  void,
+  string
+> {
   try {
     const newImage: string = yield call(getImageURL, action.payload);
     yield put(sliderCardGetNewPictureSuccess(newImage));
