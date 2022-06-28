@@ -1,11 +1,11 @@
-import { Dispatch } from 'redux';
-import { Cat, SliderAllActions } from '../types/types';
 import {
   sliderGetSlidesError,
   sliderGetSlidesSuccess,
   sliderRequestSlides,
 } from '../actions/sliderActions';
 import { getCatsBreeds } from './getCatsBreeds';
+import type { Dispatch } from 'redux';
+import type { Cat, SliderAllActions } from '../types/types';
 
 export const getSlides =
   () =>

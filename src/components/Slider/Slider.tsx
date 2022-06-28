@@ -1,15 +1,15 @@
 import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation } from 'swiper';
 import { Container, Typography } from '@mui/material';
 import { SliderArrow } from './components/SliderArrow';
 import { ArrowDirections } from './constants/constants';
-import { useDispatch, useSelector } from 'react-redux';
-import { StoreState } from '../../redux';
-import { SliderAllActions, SliderState } from './types/types';
-import { SliderCard } from './components/SliderCard';
-import { Dispatch } from 'redux';
 import { getSlides } from './services/getSlides';
+import { SliderCard } from './components/SliderCard';
+import type { Dispatch } from 'redux';
+import type { StoreState } from '../../redux';
+import type { SliderAllActions, SliderState } from './types/types';
 import 'swiper/css';
 import './Slider.scss';
 

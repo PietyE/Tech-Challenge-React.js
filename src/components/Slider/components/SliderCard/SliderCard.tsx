@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   Button,
   Card,
@@ -8,7 +9,6 @@ import {
   Link,
   Typography,
 } from '@mui/material';
-import React from 'react';
 import variables from '../../../../shared/assets/_variables.scss';
 import type { Cat } from '../../types/types';
 
