@@ -15,10 +15,10 @@ export const Content: React.FC<ContentProps> = props => {
       <Typography gutterBottom variant="h5" component="div">
         {name}
       </Typography>
-      <Typography variant="body2" color="text.secondary" gutterBottom>
+      <Typography variant="body2" color="text.secondary">
         {`${name} cats are ${temperament.toLocaleLowerCase()}.`}
         <br />
-        {`Their original country ${origin} and their life span about ${lifeSpan}`}
+        {`Their original country ${origin} and their life span about ${lifeSpan} years.`}
       </Typography>
     </CardContent>
   );

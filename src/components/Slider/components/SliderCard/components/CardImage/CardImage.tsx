@@ -8,7 +8,7 @@ interface CardImageProps {
 export const CardImage: React.FC<CardImageProps> = ({ alt }) => (
   <CardMedia
     component="img"
-    height="200"
+    height="350"
     image={process.env.PUBLIC_URL + '/defaultCat.png'}
     alt={alt}
   />

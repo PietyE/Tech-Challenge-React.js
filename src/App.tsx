@@ -6,7 +6,7 @@ import './App.scss';
 const App = () => (
   <div className="wrapper">
     <main className="main">
-      <Container maxWidth="xl" sx={{ pt: 40 }}>
+      <Container maxWidth="xl">
         <Slider />
       </Container>
     </main>
