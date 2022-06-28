@@ -1,4 +1,4 @@
 declare module '*.scss' {
-  const content: { [key: string]: any };
+  const content: Record<string, any>;
   export = content;
 }
