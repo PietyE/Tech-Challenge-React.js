@@ -9,7 +9,7 @@ export const CardImage: React.FC<CardImageProps> = ({ alt }) => (
   <CardMedia
     component="img"
     height="200"
-    image="/static/images/cards/contemplative-reptile.jpg"
+    image={process.env.PUBLIC_URL + '/defaultCat.png'}
     alt={alt}
   />
 );
