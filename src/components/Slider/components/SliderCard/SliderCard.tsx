@@ -13,7 +13,7 @@ export const SliderCard: React.FC<SliderCardProps> = ({ catInfo }) => {
   const { name, temperament, life_span, wikipedia_url, origin, id } = catInfo;
   return (
     <Card>
-      <CardImage alt={name} />
+      <CardImage alt={name} id={id} />
       <Content
         name={name}
         temperament={temperament}
