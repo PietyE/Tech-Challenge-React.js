@@ -15,7 +15,8 @@ export const sliderGetSlidesSuccess = (
   type: SliderActions.SLIDER_GET_SLIDES_SUCCESS,
   payload: slides,
 });
-export const sliderRequestError = (error: string): SliderGetSlidesError => ({
+
+export const sliderGetSlidesError = (error: string): SliderGetSlidesError => ({
   type: SliderActions.SLIDER_GET_SLIDES_ERROR,
   payload: error,
 });

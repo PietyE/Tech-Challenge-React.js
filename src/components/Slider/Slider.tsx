@@ -1,14 +1,45 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation } from 'swiper';
-import { Container } from '@mui/material';
+import { Container, Typography } from '@mui/material';
 import { SliderArrow } from './components/SliderArrow';
 import { ArrowDirections } from './constants/constants';
+import { useDispatch, useSelector } from 'react-redux';
+import { StoreState } from '../../redux';
+import { SliderAllActions, SliderState } from './types/types';
+import { SliderCard } from './components/SliderCard';
+import { Dispatch } from 'redux';
+import { getSlides } from './services/getSlides';
 import 'swiper/css';
 import './Slider.scss';
 
 export const Slider: React.FC = () => {
-  return (
+  const { isLoading, slides } = useSelector<StoreState, SliderState>(
+    state => state.slider,
+  );
+
+  const dispatch = useDispatch<Dispatch<SliderAllActions>>();
+
+  useEffect(() => {
+    getSlides()(dispatch);
+  }, []);
+
+  const renderSlides = () =>
+    slides.length > 0 ? (
+      slides.map(catSlide => (
+        <SwiperSlide key={catSlide.id}>
+          <SliderCard catInfo={catSlide} />
+        </SwiperSlide>
+      ))
+    ) : (
+      <Typography variant="h3" component="p" align="center" color="error">
+        It`s empty now... Come later...
+      </Typography>
+    );
+
+  return isLoading ? (
+    <p>Loading...</p>
+  ) : (
     <Container maxWidth="lg" className="slider">
       <SliderArrow direction={ArrowDirections.LEFT} />
       <Swiper
@@ -23,9 +54,7 @@ export const Slider: React.FC = () => {
         }}
         loop
       >
-        <SwiperSlide>item1</SwiperSlide>
-        <SwiperSlide>item2</SwiperSlide>
-        <SwiperSlide>item3</SwiperSlide>
+        {renderSlides()}
       </Swiper>
       <SliderArrow direction={ArrowDirections.RIGHT} />
     </Container>

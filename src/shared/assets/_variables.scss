@@ -3,9 +3,11 @@ $primary_light: #b19df3;
 $text_color: #373D59;
 $white_color: #FFFFFF;
 $bold: 700;
+$box-shadow: #919191BF;
 
 :export {
   primaryColor: $primary_color;
   primaryLight: $primary_light;
+  whiteColor: $white_color;
   textColor: $text_color;
 }
