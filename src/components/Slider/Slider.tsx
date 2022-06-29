@@ -8,6 +8,7 @@ import { ArrowDirections } from './constants/constants';
 import { getSlides } from './services/getSlides';
 import { SliderCard } from './components/SliderCard';
 import { Loader } from '../../shared/components/Loader';
+import { ErrorTitle } from '../../shared/components/ErrorTitle';
 import type { Dispatch } from 'redux';
 import type { StoreState } from '../../redux';
 import type { SliderAllActions, SliderState } from './types/types';
@@ -15,7 +16,7 @@ import 'swiper/css';
 import './Slider.scss';
 
 export const Slider: React.FC = () => {
-  const { isLoading, slides } = useSelector<StoreState, SliderState>(
+  const { isLoading, slides, error } = useSelector<StoreState, SliderState>(
     state => state.slider,
   );
 
@@ -38,9 +39,9 @@ export const Slider: React.FC = () => {
       </Typography>
     );
 
-  return isLoading ? (
-    <Loader />
-  ) : (
+  if (isLoading) return <Loader />;
+
+  return !error ? (
     <Container maxWidth="lg" className="slider">
       <SliderArrow direction={ArrowDirections.LEFT} />
       <Swiper
@@ -59,5 +60,7 @@ export const Slider: React.FC = () => {
       </Swiper>
       <SliderArrow direction={ArrowDirections.RIGHT} />
     </Container>
+  ) : (
+    <ErrorTitle />
   );
 };

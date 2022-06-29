@@ -11,7 +11,7 @@ export const Loader: React.FC<LoaderProps> = ({
   isLarge = true,
 }: LoaderProps) => {
   const className = isLarge ? 'large' : 'medium';
-  const size: number = isLarge
+  const size: LoaderSize = isLarge
     ? LoaderSize.LOADER_SIZE_LARGE
     : LoaderSize.LOADER_SIZE_MEDIUM;
   return (
