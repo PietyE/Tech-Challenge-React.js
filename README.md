@@ -6,6 +6,7 @@ To start project:
 
 - clone repo 
 - go to src folder
+- yarn install
 - yarn start
 - to build: yarn build
 
