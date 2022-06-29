@@ -1,8 +1,9 @@
 import React from 'react';
-import { Card } from '@mui/material';
+import { Box, Card } from '@mui/material';
 import { CardImage } from './components/CardImage';
 import { Content } from './components/Content';
 import { CardFooter } from './components/CardFooter';
+import { styles } from './styles/styles';
 import type { Cat } from '../../types/types';
 
 interface SliderCardProps {
@@ -13,7 +14,9 @@ export const SliderCard: React.FC<SliderCardProps> = ({ catInfo }) => {
   const { name, temperament, life_span, wikipedia_url, origin, id } = catInfo;
   return (
     <Card>
-      <CardImage alt={name} id={id} />
+      <Box sx={styles.imageContainer}>
+        <CardImage alt={name} id={id} />
+      </Box>
       <Content
         name={name}
         temperament={temperament}
