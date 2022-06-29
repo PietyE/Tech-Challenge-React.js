@@ -9,6 +9,7 @@ import { getSlides } from './services/getSlides';
 import { SliderCard } from './components/SliderCard';
 import { Loader } from '../../shared/components/Loader';
 import { ErrorTitle } from '../../shared/components/ErrorTitle';
+import type { ReactJSXElement } from '@emotion/react/types/jsx-namespace';
 import type { Dispatch } from 'redux';
 import type { StoreState } from '../../redux';
 import type { SliderAllActions, SliderState } from './types/types';
@@ -26,7 +27,7 @@ export const Slider: React.FC = () => {
     getSlides()(dispatch);
   }, []);
 
-  const renderSlides = () =>
+  const renderSlides = (): Array<ReactJSXElement> | ReactJSXElement =>
     slides.length > 0 ? (
       slides.map(catSlide => (
         <SwiperSlide key={catSlide.id}>
@@ -61,6 +62,6 @@ export const Slider: React.FC = () => {
       <SliderArrow direction={ArrowDirections.RIGHT} />
     </Container>
   ) : (
-    <ErrorTitle />
+    <ErrorTitle error={error} />
   );
 };

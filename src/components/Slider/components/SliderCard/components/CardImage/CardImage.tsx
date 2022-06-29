@@ -29,6 +29,6 @@ export const CardImage: React.FC<CardImageProps> = ({ alt, id }) => {
       alt={alt}
     />
   ) : (
-    <ErrorTitle />
+    <ErrorTitle error={error} />
   );
 };
